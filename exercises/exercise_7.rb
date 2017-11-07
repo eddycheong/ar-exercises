@@ -10,3 +10,12 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print "Enter a store name: "
+store_name = gets.chomp
+
+store = Store.create(name: store_name)
+
+if !store.valid?
+  store.errors.each { |error| puts error }
+end
+
