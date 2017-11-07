@@ -3,9 +3,8 @@ class Employee < ActiveRecord::Base
 
   after_validation :generate_password, on: :create
   
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :store, presence: true
   validates :hourly_rate, inclusion: { in: (40..200) }
-  validates :store, presence: true
 
   private
     def generate_password 
